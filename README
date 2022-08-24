@@ -1,0 +1,43 @@
+
+***Gaudeamus igitur iuvenes dum sumus***
+---------------------------------------------
+Hilario Iglesias Martínez
+-----------------------------------
+Si no se desea utilizar make, para su compilación,
+poner bajo el mismo directorio Variables.h, y main.c
+y compilar con el comando, para máxima depuración:
+
+gcc -Wall -Wextra -Werror main.c -o Trabajo_Memoria
+--o depuración normal--
+gcc main.c  -o Trabajo_Memoria
+
+El programa fue realizado en plataforma
+LINUX Ubuntu 20.04.4 LTS.
+Bajo el standard ANSI C.-C-11
+Para ejecutar bajo consola de linux.
+
+
+Este programa "memoria.c", utiliza la función de llamada "malloc()",que tiene como finalidad  la asignación dinámica de memoria.
+Vuelca sobre consola de LINUX la parte o buffer, de memoria seleccionada.
+El programa muestra un volcado de memoria asignada dinamicamente
+por "malloc()", con este formato:
+/*****
+0x55923d61d747 [Desplazamiento] : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+0x55923d61d756 [Desplazamiento] : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+0x55923d61d765 [Desplazamiento] : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+0x55923d61d774 [Desplazamiento] : 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+
+/****
+Luego pregunta que se desea colocar en cualquiera de esas direcciones. Como respuest vuelca la frase elegida.
+/*****
+0 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00   |  ................pcIa� 
+00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00   |  ................pcIa� 
+00 11 04 00 00 00 00 00  00 46 52 41 53 45 0A 34   |  .........FRASE.4pcIa� 
+62 35 36 63 37 34 37 20  0A 00 00 00 00 00 00 00   |  b56c747 ........pcIa�
+/*****
+Se debe de tener en cuenta que si se elige una dirección fuera del rango seleccionado por "malloc()", el programa nos devolverá el típico error
+de "Violación de segmento (`core' generado)"
+
+
+
+
